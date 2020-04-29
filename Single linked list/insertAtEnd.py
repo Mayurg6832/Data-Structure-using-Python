@@ -6,27 +6,19 @@ class Node:
 class linkedList:
     def __init__(self):
         self.head=None
+        
+    def insertAtEnd(self,data):
+    node=Node(data)
+    if self.head==None:
+        self.head=node
+    else:
+        current=self.head
+        while True:
+            if current.next==None:
+                break
+            current=current.next
+        current.next=node
 
-    def insertNode(self,data):
-        node=Node(data)
-        if self.head==None:
-            self.head=node
-        else:
-            current=self.head
-            while True:
-                if current.next==None:
-                    break
-                current=current.next
-            current.next=node
-
-    def insertAtBegi(self,data):
-        node=Node(data)
-        if self.head==None:
-            self.head=node
-        else:
-            temp=self.head
-            self.head=node
-            self.head.next=temp
 
     def display(self):
         if self.head==None:
@@ -40,10 +32,8 @@ class linkedList:
                 current=current.next
 
 linkedlist=linkedList()
-linkedlist.insertNode(3)
-linkedlist.insertNode(1)
-linkedlist.insertNode(4)
-linkedlist.insertNode(5)
-linkedlist.insertAtBegi(0)
+linkedlist.insertAtEnd(15)
+linkedlist.insertAtEnd(25)
+linkedlist.insertAtEnd(35)
 
 linkedlist.display()
